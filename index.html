@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+  <main>
+    <div class="container">
+      <h1>OMDB FILMS</h1>
+
+      <input class="js-input" type="text" placeholder="Search...">
+
+      <ul class="js-list">
+        
+      </ul>
+
+ 
+
+      <nav class="nav" aria-label="Page navigation example">
+        <span class="page-item"><a class="page-link prev" href="#">Previous</a></span>
+        <ul class="pagination">
+
+        </ul>
+        <span class="page-item"><a class="page-link next" href="#">Next</a></span>
+      </nav> 
+    </div>
+  </main>
+
+  <template class="films-template">
+    <li class="item">
+      <img class="item__img" src="https://via.placeholder.com/250x300" alt="Template img" width="250" height="300">
+      <h3 class="item__title">Shazam</h3>
+      <p class="item__year">2020</p>
+      <p class="item__type">movie</p>
+      <p class="item__id">ttff0055</p>
+    </li>
+  </template>
+
+  <template class="pagination-template">
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+  </template>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
