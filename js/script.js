@@ -69,3 +69,10 @@ const renderMovie = (array, node) => {
     activePage++
     getMovie();
   })
+
+  elPagination.addEventListener("click", (evt) => {
+    if(evt.target.matches(".page-link")) {
+      activePage = evt.target.dataset.pageId;
+      getMovie()
+    }
+  })
