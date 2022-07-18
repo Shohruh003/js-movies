@@ -8,6 +8,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: antiquewhite;
 }
 
 main {
@@ -51,4 +52,23 @@ img {
 
 .nav {
   display: flex;
+  justify-content: center;
+}
+
+.heading {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.js-input {
+  margin-right: 50px;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+}
+
+.js-select {
+  padding: 5px;
+  border: none;
+  border-radius: 20px;
 }
