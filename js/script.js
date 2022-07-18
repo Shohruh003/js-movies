@@ -5,6 +5,7 @@ const elPaginationTemplate = document.querySelector(".pagination-template").cont
 const elPrevBtn = document.querySelector(".prev");
 const elNextBtn = document.querySelector(".next");
 const elPagination = document.querySelector(".pagination");
+const elSelect = document.querySelector(".js-select");
 
 const API_KEY = "f17aea12";
 let elInputVal = "";
@@ -29,10 +30,11 @@ const renderMovie = (array, node) => {
     newTemplate.querySelector(".item__type").textContent = e.Type;
     newTemplate.querySelector(".item__id").textContent = e.imdbID;
     filmsFragment.appendChild(newTemplate);
+
   })
   node.appendChild(filmsFragment);
-
 }
+
 
   async function getMovie() {
     const response = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${elInputVal}&page=${activePage}`);
@@ -60,6 +62,23 @@ const renderMovie = (array, node) => {
       newPageTemp.querySelector(".page-link").dataset.pageId = i;
       elPagination.appendChild(newPageTemp)
     }
+    
+elSelect.addEventListener('change', function (evt) {
+	evt.preventDefault();
+	elList.innerHTML = '';
+	let val = elSelect.value;
+
+  data.Search.sort((a,b) => {
+    if(a.Type == val) {
+      return -1;
+    }
+    return 1;
+  })
+  renderMovie(data.Search,elList);
+
+
+	});
+
   }
 
   elPrevBtn.addEventListener("click", () => {
