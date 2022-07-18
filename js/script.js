@@ -38,7 +38,8 @@ const renderMovie = (array, node) => {
     const response = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${elInputVal}&page=${activePage}`);
 
     const data = await response.json();
-    let totalPages = Math.ceil(data.totalRasults / 10);
+    let totalPages = Math.ceil(data.totalResults / 10);
+
     renderMovie(data.Search, elList)
 
     if(activePage == 1) {
@@ -52,10 +53,11 @@ const renderMovie = (array, node) => {
     } else {
       elNextBtn.removeAttribute("disabled")
     }
-
+    elPagination.innerHTML = "";
     for(let i = 1; i < totalPages; i++) {
       const newPageTemp = elPaginationTemplate.cloneNode(true);
       newPageTemp.querySelector(".page-link").textContent = i;
+      newPageTemp.querySelector(".page-link").dataset.pageId = i;
       elPagination.appendChild(newPageTemp)
     }
   }
